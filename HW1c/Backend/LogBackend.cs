@@ -37,6 +37,50 @@ namespace HW1c.Backend
         private ILogRepository repository = new LogRepositoryMock();
 
         /// <summary>
+        /// Create
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public LogModel Create(LogModel data)
+        {
+            var myData = repository.Create(data);
+            return myData;
+        }
+
+        /// <summary>
+        /// Read
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public LogModel Read(string id)
+        {
+            var myData = repository.Read(id);
+            return myData;
+        }
+        
+        /// <summary>
+        /// Update
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public LogModel Update(LogModel data)
+        {
+            var myData = repository.Update(data);
+            return myData;
+        }
+
+        /// <summary>
+        /// Delete
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public bool Delete(string id)
+        {
+            var myData = repository.Delete(id);
+            return myData;
+        }
+
+        /// <summary>
         ///  Returns the List of Logs
         /// </summary>
         /// <returns></returns>
@@ -47,6 +91,5 @@ namespace HW1c.Backend
 
             return myData;
         }
-
     }
 }
