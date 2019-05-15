@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using HW1c.Models;
 using HW1c.Backend;
-using Telemetry.Backend;
 
 namespace HW1c.Backend
 {
