@@ -15,7 +15,7 @@ namespace HW1c.Controllers
         {
             var myViewModel = new ReportViewModel();
 
-            myViewModel.LogViewModel = new LogBackend().Index();
+            myViewModel.LogViewModel = LogBackend.Instance.Index();
             myViewModel.NumberOfUsers = 3;
 
             return View(myViewModel);
