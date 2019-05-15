@@ -5,7 +5,39 @@
 
 <h2>Read</h2>
 
-<div>
-    @Html.DisplayNameFor(m => m.RecordedDateTime)
-    @Html.DisplayFor(m => m.RecordedDateTime)
+<div class="row">
+    <div class="col-3 text-right">
+        @Html.DisplayNameFor(m => m.EventType)
+    </div>
+    <div class="col">
+        @Html.DisplayFor(m => m.EventType)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3 text-right">
+        @Html.DisplayNameFor(m => m.Value)
+    </div>
+    <div class="col">
+        @Html.DisplayFor(m => m.Value)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3 text-right">
+        @Html.DisplayNameFor(m => m.PhoneID)
+    </div>
+    <div class="col">
+        @Html.DisplayFor(m => m.PhoneID)
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-3 text-right">
+        @Html.DisplayNameFor(m => m.RecordedDateTime)
+    </div>
+    <div class="col">
+        @Html.DisplayFor(m => m.RecordedDateTime)
+    </div>
 </div>
