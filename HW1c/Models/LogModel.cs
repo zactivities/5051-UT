@@ -43,5 +43,26 @@ namespace HW1c.Models
         {
             // None right now...
         }
+
+        /// <summary>
+        /// Update fields passed in
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public bool Update(LogModel data)
+        {
+            if (data == null)
+            {
+                return false;
+            }
+
+            EventType = data.EventType;
+            Value = data.Value;
+            RecordedDateTime = data.RecordedDateTime;
+            PhoneID = data.PhoneID;
+            AppVersion = AppVersion;
+
+            return true;
+        }
     }
 }
