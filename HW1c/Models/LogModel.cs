@@ -7,6 +7,9 @@ namespace HW1c.Models
 {
     public class LogModel
     {
+        // The ID of the record
+        public string ID { get; set; }
+
         // The Event Type
         // Todo, change to an Enum
         public int EventType { get; set; }
@@ -38,7 +41,7 @@ namespace HW1c.Models
         /// </summary>
         public void Initialize()
         {
-            // None right now...
+            ID = Guid.NewGuid().ToString();
         }
     }
 }
