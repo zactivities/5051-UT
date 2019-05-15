@@ -18,6 +18,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
+                            <th scope="col">ID</th>
                             <th scope="col">Date</th>
                             <th scope="col">App Version</th>
                             <th scope="col">Phone ID</th>
@@ -28,6 +29,7 @@
                             foreach (var item in Model.LogViewModel.LogList)
                             {
                                 <tr>
+                                    <td>@Html.ActionLink(item.ID,"Read",new { id = item.ID })</td>
                                     <td>@item.RecordedDateTime.ToShortDateString()</td>
                                     <td>@item.AppVersion</td>
                                     <td>@item.PhoneID</td>
