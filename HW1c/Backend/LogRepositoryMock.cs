@@ -14,6 +14,15 @@ namespace HW1c.Backend
         public List<LogModel> dataset = new List<LogModel>();
 
         /// <summary>
+        /// Constructor for Log Repository
+        /// </summary>
+        public LogRepositoryMock()
+        {
+            // Call for Sead data to be created
+            Initialize();
+        }
+
+        /// <summary>
         /// Add the log item to the data store
         /// </summary>
         /// <param name="data">
@@ -67,6 +76,17 @@ namespace HW1c.Backend
         public List<LogModel> Index()
         {
             return dataset;
+        }
+
+        /// <summary>
+        /// Sets Initial Seed Data
+        /// </summary>
+        public void Initialize()
+        {
+            dataset.Add(new LogModel { AppVersion = "1", PhoneID = "ABC", RecordedDateTime = DateTime.Now });
+            dataset.Add(new LogModel { AppVersion = "2", PhoneID = "MNO", RecordedDateTime = DateTime.Parse("01/23/2019") });
+            dataset.Add(new LogModel { AppVersion = "3", PhoneID = "ZYX", RecordedDateTime = DateTime.Now.AddDays(-2) });
+            dataset.Add(new LogModel { AppVersion = "3.3", PhoneID = "ZYXa", RecordedDateTime = DateTime.Now.AddYears(-1) });
         }
     }
 }
