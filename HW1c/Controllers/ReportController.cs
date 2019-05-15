@@ -20,5 +20,22 @@ namespace HW1c.Controllers
 
             return View(myViewModel);
         }
+
+        /// <summary>
+        /// Look up the record passed in
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult Read(string id = null)
+        {
+            // If no ID passed in, jump to the Index page
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var myData = LogBackend.Instance.Read(id);
+            return View(myData);
+        }
     }
 }
