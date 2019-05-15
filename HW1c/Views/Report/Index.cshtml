@@ -30,14 +30,14 @@
                         @{
                             foreach (var item in Model.LogViewModel.LogList)
                             {
-                        <tr>
-                            <td>@Html.ActionLink(item.ID, "Read", new { id = item.ID })</td>
-                            <td>@item.RecordedDateTime.ToShortDateString()</td>
-                            <td>@item.AppVersion</td>
-                            <td>@item.PhoneID</td>
-                            <td>@item.EventType</td>
-                            <td>@item.Value</td>
-                        </tr>
+                                <tr>
+                                    <td>@Html.ActionLink(item.ID, "Read", new { id = item.ID },new { @class = "small" })</td>
+                                    <td>@item.RecordedDateTime.ToShortDateString()</td>
+                                    <td>@item.AppVersion</td>
+                                    <td>@item.PhoneID</td>
+                                    <td>@item.EventType</td>
+                                    <td>@item.Value</td>
+                                </tr>
                             }
                         }
 
@@ -45,13 +45,13 @@
                 </table>
             </div>
             <div>
-                @Html.ActionLink("Create","Create","Report",new { @class="btn btn-primary"})
+                @Html.ActionLink("Create", "Create", "Report", new { @class = "btn btn-primary" })
             </div>
         </div>
     </div>
     <div class="row text-center">
         <div class="col">
-            <img src="~/Content/Img/PieChart1.png" class="PieChartBox"/>
+            <img src="~/Content/Img/PieChart1.png" class="PieChartBox" />
         </div>
     </div>
 </div>
