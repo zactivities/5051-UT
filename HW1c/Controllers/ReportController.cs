@@ -120,5 +120,46 @@ namespace HW1c.Controllers
             var myData = LogBackend.Instance.Create(data);
             return RedirectToAction("Index");
         }
+
+        /// <summary>
+        /// Update Page
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Update(string id = null)
+        {
+            var myData = LogBackend.Instance.Read(id);
+            return View(myData);
+        }
+
+        /// <summary>
+        /// Update Action
+        /// </summary>
+        /// <param name="data">The Phone, and EventType, and Value</param>
+        /// <returns></returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update([Bind(Include =
+            "ID," +
+            "RecordedDateTime,"+
+
+            "PhoneID," +
+            "EventType," +
+            "Value," +
+            "")] LogModel data)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+
+            // If no data passed in, jump to the Index page
+            if (data == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var myData = LogBackend.Instance.Update(data);
+            return RedirectToAction("Index");
+        }
     }
 }
