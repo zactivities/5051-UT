@@ -22,18 +22,22 @@
                             <th scope="col">Date</th>
                             <th scope="col">App Version</th>
                             <th scope="col">Phone ID</th>
+                            <th scope="col">Evnet Type</th>
+                            <th scope="col">Value</th>
                         </tr>
                     </thead>
                     <tbody>
                         @{
                             foreach (var item in Model.LogViewModel.LogList)
                             {
-                                <tr>
-                                    <td>@Html.ActionLink(item.ID,"Read",new { id = item.ID })</td>
-                                    <td>@item.RecordedDateTime.ToShortDateString()</td>
-                                    <td>@item.AppVersion</td>
-                                    <td>@item.PhoneID</td>
-                                </tr>
+                        <tr>
+                            <td>@Html.ActionLink(item.ID, "Read", new { id = item.ID })</td>
+                            <td>@item.RecordedDateTime.ToShortDateString()</td>
+                            <td>@item.AppVersion</td>
+                            <td>@item.PhoneID</td>
+                            <td>@item.EventType</td>
+                            <td>@item.Value</td>
+                        </tr>
                             }
                         }
 
