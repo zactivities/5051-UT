@@ -18,7 +18,7 @@ namespace HW1c.Models
         public string Value { get; set; }
 
         // Recorded Date Time at the Server
-        public DateTime RecordedDateTime { get; set; } = new DateTime();
+        public DateTime RecordedDateTime { get; set; } = DateTime.Now;
 
         // ID of the Phone as a quid
         public string PhoneID { get; set; }
