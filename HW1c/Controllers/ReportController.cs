@@ -37,5 +37,27 @@ namespace HW1c.Controllers
             var myData = LogBackend.Instance.Read(id);
             return View(myData);
         }
+
+        [HttpPost]
+        public ActionResult Delete([Bind(Include ="ID")] string id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+
+            // If no ID passed in, jump to the Index page
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var myData = LogBackend.Instance.Read(id);
+            if (myData != null)
+            {
+                LogBackend.Instance.Delete(id);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
