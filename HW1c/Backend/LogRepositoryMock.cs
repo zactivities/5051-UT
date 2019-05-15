@@ -43,7 +43,9 @@ namespace HW1c.Backend
         /// <returns>the item from the datastore, or null</returns>
         public LogModel Read(String id)
         {
-            return null;
+            // Get the first instance of the record
+            var myData = dataset.First(m => m.ID == id);
+            return myData;
         }
 
         /// <summary>
@@ -54,6 +56,14 @@ namespace HW1c.Backend
         /// <returns>the updated item</returns>
         public LogModel Update(LogModel data)
         {
+            // Get the first instance of the record
+            var myData = dataset.First(m => m.ID == data.ID);
+            if (myData == null)
+            {
+                return null;
+            }
+
+            myData.Update(data);
             return data;
         }
 
@@ -66,7 +76,15 @@ namespace HW1c.Backend
         /// <returns>true if removed</returns>
         public Boolean Delete(String id)
         {
-            return true;
+            // Get the first instance of the record
+            var myData = dataset.First(m => m.ID == id);
+            if (myData == null)
+            {
+                return false;
+            }
+
+            var myResult = dataset.Remove(myData);
+            return myResult;
         }
 
         /// <summary>
