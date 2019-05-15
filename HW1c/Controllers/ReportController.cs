@@ -83,5 +83,42 @@ namespace HW1c.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        /// <summary>
+        /// Create Page
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// Create Action
+        /// </summary>
+        /// <param name="data">The Phone, and EventType, and Value</param>
+        /// <returns></returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = 
+            "PhoneID," +
+            "EventType," +
+            "Value," +
+            "")] LogModel data)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+
+            // If no data passed in, jump to the Index page
+            if (data == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var myData = LogBackend.Instance.Create(data);
+            return RedirectToAction("Index");
+        }
     }
 }

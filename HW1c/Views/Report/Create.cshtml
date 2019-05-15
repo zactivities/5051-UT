@@ -37,20 +37,8 @@
         </div>
     </div>
 
-
-    <div class="row">
-        <div class="col-3 text-right">
-            @Html.DisplayNameFor(m => m.RecordedDateTime)
-        </div>
-        <div class="col">
-            @Html.EditorFor(m => m.RecordedDateTime)
-        </div>
-    </div>
-
-
     <br />
     <br />
-
 
     @Html.ActionLink("Cancel", "Index", "Report", new { @class = "btn btn-primary" })
     <input id="Submit" type="submit" value="Create" class="btn btn-danger" />
