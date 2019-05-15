@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using HW1c.Models;
+using HW1c.Backend;
+using Telemetry.Backend;
+
 namespace HW1c.Backend
 {
     public class LogBackend
@@ -10,6 +13,9 @@ namespace HW1c.Backend
 
         private static volatile LogBackend instance;
         private static object syncRoot = new object();
+
+        // Hook up the Repositry
+        private ILogRepository repository = new LogRepositoryMock();
 
         private LogBackend() { }
 

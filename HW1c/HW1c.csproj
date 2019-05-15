@@ -114,7 +114,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Backend\ILogRepository.cs" />
     <Compile Include="Backend\LogBackend.cs" />
+    <Compile Include="Backend\LogRepositoryMock.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Global.asax.cs">
