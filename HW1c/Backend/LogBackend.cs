@@ -9,12 +9,9 @@ namespace HW1c.Backend
 {
     public class LogBackend
     {
-
+        #region SingletonPattern
         private static volatile LogBackend instance;
         private static object syncRoot = new object();
-
-        // Hook up the Repositry
-        private ILogRepository repository = new LogRepositoryMock();
 
         private LogBackend() { }
 
@@ -34,6 +31,10 @@ namespace HW1c.Backend
                 return instance;
             }
         }
+        #endregion SingletonPattern
+
+        // Hook up the Repositry
+        private ILogRepository repository = new LogRepositoryMock();
 
         /// <summary>
         ///  Returns the List of Logs
@@ -42,12 +43,8 @@ namespace HW1c.Backend
         public LogViewModel Index()
         {
             var myData = new LogViewModel();
+            myData.LogList = repository.Index();
 
-            // TODO:  Populate some Log Data here...
-            myData.LogList.Add(new LogModel { AppVersion = "1", PhoneID = "ABC", RecordedDateTime = DateTime.Now });
-            myData.LogList.Add(new LogModel { AppVersion = "2", PhoneID = "MNO", RecordedDateTime = DateTime.Parse("01/23/2019") });
-            myData.LogList.Add(new LogModel { AppVersion = "3", PhoneID = "ZYX", RecordedDateTime = DateTime.Now.AddDays(-2) });
-            myData.LogList.Add(new LogModel { AppVersion = "3.3", PhoneID = "ZYXa", RecordedDateTime = DateTime.Now.AddYears(-1) });
             return myData;
         }
 
