@@ -41,3 +41,7 @@
         @Html.DisplayFor(m => m.RecordedDateTime)
     </div>
 </div>
+
+<div>
+    @Html.ActionLink("Delete","Delete","Report",new { id=Model.ID},new { @class = "btn btn-danger" })
+</div>
