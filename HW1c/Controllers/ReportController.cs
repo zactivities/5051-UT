@@ -38,8 +38,32 @@ namespace HW1c.Controllers
             return View(myData);
         }
 
-        [HttpPost]
-        public ActionResult Delete([Bind(Include ="ID")] string id)
+        /// <summary>
+        /// Show the Data to Delete
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult Delete(string id = null)
+        {
+            // If no ID passed in, jump to the Index page
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var myData = LogBackend.Instance.Read(id);
+            return View(myData);
+        }
+
+        /// <summary>
+        /// Delete Action
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed([Bind(Include ="ID")] string id)
         {
             if (!ModelState.IsValid)
             {

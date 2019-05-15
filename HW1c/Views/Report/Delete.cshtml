@@ -58,8 +58,9 @@
 <h1> Delete this record?</h1>
 @using (Html.BeginForm(FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     @Html.HiddenFor(m => m.ID)
 
-    @Html.ActionLink("Cancel", "Index", "Report")<br />
-    <input id="Submit" type="submit" value="Delete" />
+    @Html.ActionLink("Cancel", "Index", "Report",new { @class = "btn btn-primary" })
+    <input id="Submit" type="submit" value="Delete" class="btn btn-danger"/>
 }
