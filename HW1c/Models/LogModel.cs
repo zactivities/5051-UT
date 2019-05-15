@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -12,6 +13,7 @@ namespace HW1c.Models
 
         // The Event Type
         // Todo, change to an Enum
+        [Display(Name="Event Type", Description = "Type of Event")]
         public int EventType { get; set; }
 
         // The Value Sent by the Phone, as a string
