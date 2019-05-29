@@ -93,6 +93,23 @@ namespace HW1c.Controllers
             return View();
         }
 
+
+        /// <summary>
+        /// Log the Phone Request
+        /// </summary>
+        /// <param name="data">The Phone, and EventType, and Value</param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult Log([Bind(Include =
+            "PhoneID," +
+            "EventType," +
+            "Value," +
+            "")] LogModel data)
+        {
+            var myData = LogBackend.Instance.Create(data);
+            return Json("OK", JsonRequestBehavior.AllowGet);
+        }
+
         /// <summary>
         /// Create Action
         /// </summary>
