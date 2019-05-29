@@ -35,7 +35,26 @@ namespace ModelUnitTests
             var result = myTest.Update(myUpdate);
 
             // Assert
-            Assert.AreEqual(myUpdate.PhoneID,myTest.PhoneID);
+            Assert.AreEqual(myUpdate.PhoneID, myTest.PhoneID);
+        }
+
+
+        [TestMethod]
+        public void LogModel_Update_Invalid_Null_Data_Should_Pass()
+        {
+
+            // Arange
+            var myTest = new LogModel(); 
+            var myUpdate = new LogModel
+            {
+                PhoneID = "Phone id"
+            };
+
+            // Act
+            var result = myTest.Update(null);
+
+            // Assert
+            Assert.AreEqual(myUpdate.PhoneID, myTest.PhoneID);
         }
     }
 }
