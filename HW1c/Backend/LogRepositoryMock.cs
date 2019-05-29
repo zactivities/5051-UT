@@ -31,6 +31,11 @@ namespace HW1c.Backend
         /// <returns>return the passed in log item</returns>
         public LogModel Create(LogModel data)
         {
+            if (data == null)
+            {
+                return null;
+            }
+
             dataset.Add(data);
             return data;
         }

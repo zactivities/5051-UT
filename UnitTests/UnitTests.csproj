@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backend\LogRepositoryMockTests.cs" />
     <Compile Include="Models\LogModelTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,7 +58,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Backend\" />
     <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
