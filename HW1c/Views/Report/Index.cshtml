@@ -35,7 +35,7 @@
                             foreach (var item in Model.LogViewModel.LogList)
                             {
                                 <tr>
-                                    <td>@Html.ActionLink(item.ID, "Read", new { id = item.ID },new { @class = "small" })</td>
+                                    <td>@Html.ActionLink("Click Me", "Read", new { id = item.ID },new { @class = "small" })</td>
                                     <td>@item.RecordedDateTime.ToShortDateString()</td>
                                     <td>@item.AppVersion</td>
                                     <td>@item.PhoneID</td>
