@@ -48,6 +48,8 @@ namespace HW1c.Models
 
         /// <summary>
         /// Update fields passed in
+        /// Updates all fields to be the values passed in
+        /// Does NOT update the ID field, this allows for the method to be used as part of a copy.
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
@@ -58,6 +60,10 @@ namespace HW1c.Models
                 return false;
             }
 
+            // Don't update the ID, leave the old on in place
+            ID = data.ID;
+
+            // Update all the other fields
             EventType = data.EventType;
             Value = data.Value;
             RecordedDateTime = data.RecordedDateTime;
