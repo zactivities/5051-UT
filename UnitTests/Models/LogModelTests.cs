@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HW1c.Models;
 
-namespace ModelUnitTests
+namespace UnitTests.Models
 {
     [TestClass]
     public class LogModelUnitTests
