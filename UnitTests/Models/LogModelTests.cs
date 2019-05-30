@@ -45,16 +45,12 @@ namespace ModelUnitTests
 
             // Arange
             var myTest = new LogModel(); 
-            var myUpdate = new LogModel
-            {
-                PhoneID = "Phone id"
-            };
 
             // Act
             var result = myTest.Update(null);
 
             // Assert
-            Assert.AreEqual(myUpdate.PhoneID, myTest.PhoneID);
+            Assert.AreEqual("abc", myTest.PhoneID);
         }
     }
 }
