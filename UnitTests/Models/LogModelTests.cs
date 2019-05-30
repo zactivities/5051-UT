@@ -40,7 +40,7 @@ namespace ModelUnitTests
 
 
         [TestMethod]
-        public void LogModel_Update_Invalid_Null_Data_Should_Pass()
+        public void LogModel_Update_Invalid_Null_Data_Should_Fail()
         {
 
             // Arange
