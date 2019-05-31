@@ -8,7 +8,7 @@ namespace HW1c.Models
     public class ReportViewModel
     {
         // The List of Logs
-        public LogViewModel LogViewModel { get; set; }
+        public LogViewModel LogViewModel { get; set; } = new LogViewModel();
 
         // The Number of Users
         public int NumberOfUsers { get; set; }
