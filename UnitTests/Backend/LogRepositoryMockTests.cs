@@ -61,7 +61,6 @@ namespace UnitTests.Backend
         }
 
         [TestMethod]
-        [ExpectedException(typeof(System.InvalidOperationException))]
         public void LogRepositoryMock_Update_InValid_Bogus_Item_Should_Pass()
         {
             // Arange
@@ -75,7 +74,7 @@ namespace UnitTests.Backend
             var result = myData.Update(newItem);
 
             // Assert
-            Assert.AreEqual(false, result);
+            Assert.AreEqual(null, result);
         }
 
         [TestMethod]
@@ -98,7 +97,6 @@ namespace UnitTests.Backend
         }
 
         [TestMethod]
-        [ExpectedException(typeof(System.InvalidOperationException))]
         public void LogRepositoryMock_Delete_InValid_Bogus_Item_Should_Pass()
         {
             // Delete the first item from the list, and then check the list to verify it is gone
@@ -137,7 +135,6 @@ namespace UnitTests.Backend
         }
 
         [TestMethod]
-        [ExpectedException(typeof(System.InvalidOperationException))]
         public void LogRepositoryMock_Read_InValid_Bogus_Item_Should_Pass()
         {
             // Arange

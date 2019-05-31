@@ -49,7 +49,14 @@ namespace HW1c.Backend
         public LogModel Read(String id)
         {
             // Get the first instance of the record
-            var myData = dataset.First(m => m.ID == id);
+            var myData = dataset.FirstOrDefault(m => m.ID == id);
+
+            if (myData == null)
+            {
+                return null;
+            }
+
+            // Found what was looking for, so all OK
             return myData;
         }
 
