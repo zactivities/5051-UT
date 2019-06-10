@@ -47,9 +47,9 @@ namespace UnitTests.Models
             // Arrange
             var testReportViewModel = new ReportViewModel();
             // Act
-            var myLogViewModel = testReportViewModel.LogViewModel;
+            var testLogViewModel = testReportViewModel.LogViewModel;
             // Assert
-            Assert.IsNotNull(myLogViewModel);
+            Assert.IsNotNull(testLogViewModel);
         }
 
     }
